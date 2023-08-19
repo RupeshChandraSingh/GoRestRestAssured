@@ -26,7 +26,7 @@ public class RestClient {
 
 	private void addAuthorizatoinHeader() {
 		if (!isAuthorzationAdded) {
-			speckBuilder.addHeader("Authorization", "Bearer" + properties.getProperty("token"));
+			speckBuilder.addHeader("Authorization", "Bearer " + properties.getProperty("token"));
 			isAuthorzationAdded = true;
 		}
 

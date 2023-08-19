@@ -5,3 +5,8 @@
 
 ## Version 1.1
 * Added testRunner files.
+
+## Version 1.2
+* Updated pom.
+* Updated restClient.
+* Updated UserTest.

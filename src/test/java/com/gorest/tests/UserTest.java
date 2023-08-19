@@ -18,7 +18,9 @@ public class UserTest extends BaseTest {
 		User createUserResource = User.builder().name("Mathew").email(stringUtil.getRandomMail()).gender("male")
 				.status("active").build();
 		Response response = restClient.post(GOREST_ENDPOINT, "json", createUserResource, true, true);
-		response.then().log().all();
+		response.then().log().all()
+			.assertThat()
+				.statusCode(201);
 
 	}
 
