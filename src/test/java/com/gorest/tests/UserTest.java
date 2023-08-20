@@ -15,7 +15,7 @@ public class UserTest extends BaseTest {
 	@Test
 	public void createUserTest() {
 		stringUtil = new StringUtil();
-		User createUserResource = User.builder().name("Mathew").email(stringUtil.getRandomMail()).gender("male")
+		User createUserResource = User.builder().name("MathewHad").email(stringUtil.getRandomMail()).gender("male")
 				.status("active").build();
 		Response response = restClient.post(GOREST_ENDPOINT, "json", createUserResource, true, true);
 		response.then().log().all()
