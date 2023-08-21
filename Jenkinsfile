@@ -20,7 +20,7 @@ pipeline
             steps
             {
                  git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             post 
             {
@@ -31,7 +31,19 @@ pipeline
                 }
             }
         }
-        
-       
+        stage("Deploy to QA"){
+            steps{
+                echo("deploy to qa done")
+            }
+        }
+          
+          stage("GO Rest Regression API test"){
+            steps{
+                catchError(buildResult:'SUCCESS', stageResult:'FAILURE'){
+                	git 'https://github.com/RupeshChandraSingh/GoRestRestAssured.git'
+                	bat "mvn clean install =Dsurefire.suiteXmlFiles=src/test/resources/testRunners/goRestTestRunner.xml"
+                }
+            }
+        }
     }
 }
