@@ -19,3 +19,6 @@
 
 ## Version 1.5
 * Added Jenkinsfile.
+
+## Version 1.6
+* Added Jenkinsfile.

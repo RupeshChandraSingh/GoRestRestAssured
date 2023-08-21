@@ -41,7 +41,7 @@ pipeline
             steps{
                 catchError(buildResult:'SUCCESS', stageResult:'FAILURE'){
                 	git 'https://github.com/RupeshChandraSingh/GoRestRestAssured.git'
-                	bat "mvn clean install =Dsurefire.suiteXmlFiles=src/test/resources/testRunners/goRestTestRunner.xml"
+                	bat "mvn clean install -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/goRestTestRunner.xml"
                 }
             }
         }
