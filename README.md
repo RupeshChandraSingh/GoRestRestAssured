@@ -13,3 +13,6 @@
 
 ## Version 1.3
 * Added Jenkinsfile.
+
+## Version 1.4
+* Added Jenkinsfile.
